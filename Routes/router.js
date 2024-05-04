@@ -23,6 +23,8 @@ router.post('/addplan',jwtmiddleware,usercontroller.addToplan)
 router.get('/getplan',jwtmiddleware,usercontroller.getPlan)
 router.delete('/plandelete/:id',usercontroller.removeFromPlan)
 router.delete('/deleteAdmin/:id',jwtmiddleware,usercontroller.adminDeleteDish)
+router.get('/user/userDish',jwtmiddleware,usercontroller.viewMydish)
+
 
 
 module.exports=router

@@ -258,3 +258,20 @@ exports.adminDeleteDish= async (req, res) => {
     }
 }
 
+exports.viewMydish=async(req,res)=>{
+    console.log("inside user details")
+    console.log(req.payload);
+    const userId=req.payload
+   
+    
+    try{
+        const data=await dishes.find({userId})
+        console.log(data)
+        res.status(200).json(data)
+    }
+    catch(err){
+        res.status(401).json(err)
+
+    }
+}
+
